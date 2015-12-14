@@ -13,12 +13,8 @@
             </CommandBar.Content>
             <AppBarButton 
                           Foreground="White"
-                          Click="Search_Click"
                           Name="Search_Icon" Icon="Find"/>
-            <AppBarButton Icon ="AllApps" 
-                          Foreground="White" 
-                          Click="Details_Click"
-                          Name="Details_Icon"/>
+
             <AppBarButton Icon="Contact" 
                           Foreground="White" 
                           Click="About_Click"
@@ -39,6 +35,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!--This go button is not used for anything anymore other than something that can gain focus-->
         <Button x:Name="Go_Button" 
                 Content="GO" 
                 FontWeight="Bold"
@@ -47,15 +44,14 @@
                 VerticalAlignment="Top"
                 Background="DarkRed"
                 Width="150"
-                Foreground="White"
-                Click="Go_Button_Click"
+                Foreground="White"                
                 Grid.Row="2"
+                Opacity="0"
                 />
 
         <AutoSuggestBox x:Name="SearchBox" 
                  HorizontalAlignment="Center"
-                 Margin="20,10,20,0"
-                 
+                 Margin="20,10,20,0"                
                  Foreground="White"
                  BorderBrush="DarkRed"
                  Text="Search"

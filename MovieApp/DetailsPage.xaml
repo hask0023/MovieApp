@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     >
-    
+
     <Page.TopAppBar>
         <CommandBar Background="DarkRed">
             <CommandBar.Content>
@@ -17,26 +17,23 @@
                            Click="Search_Click"
                           Name="Search_Icon"
                           Foreground="White"/>
-                            
-            <AppBarButton Icon="AllApps" 
-                          Click="Details_Click"
-                          Name="Details_Icon"
-                          Foreground="White"/>
+
+
             <AppBarButton Icon="Contact" 
                           Click="About_Click"
                           Name="About_Icon"
                           Foreground="White"/>
         </CommandBar>
     </Page.TopAppBar>
-    
-    
+
+
 
     <Grid Background="#404241"
          
           >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height=".1*"/>           
+            <RowDefinition Height=".1*"/>
             <RowDefinition Height=".9*"/>
             <RowDefinition Height=".25*"/>
             <RowDefinition Height="*"/>
@@ -47,8 +44,9 @@
                VerticalAlignment="Top"
                Margin="0,0,0,10"
                MaxHeight="250"
+              
                />
-        
+
         <TextBlock x:Name="Movie_Title" 
                    HorizontalAlignment="Center" 
                    Grid.Row="2" 
@@ -57,41 +55,44 @@
                    VerticalAlignment="Top" 
                    FontWeight="Bold" 
                    FontSize="18.667"/>
-        
+
         <ScrollViewer Grid.Row="3"
                       VerticalScrollBarVisibility="Hidden">
             <StackPanel x:Name="mainStackPanel"
+                    Width="360"    
                     Margin="10,0,10,0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Grid.Row="3"
                         >
+                <StackPanel x:Name="movie_info_stackPanel"
+                        Width="360"
+                        Orientation="Horizontal"
+                        MaxHeight="100">
 
-            <StackPanel x:Name="movie_info_stackPanel"
-                    Orientation="Horizontal">
-
-                <TextBlock x:Name="RunTime" 
+                    <TextBlock x:Name="RunTime" 
                            
         	HorizontalAlignment="Left" 
+            TextAlignment="Center"
             Width="100"
         	TextWrapping="Wrap" 
         	Foreground="White"
-            Margin="40,0,0,0"                          
+            Margin="0,0,0,0"                          
         	VerticalAlignment="Top" 
             FontSize="14.667"/>
 
-                <TextBlock x:Name="Genre" 
-        	HorizontalAlignment="Left" 
+                    <TextBlock x:Name="Genre"                      
+        	HorizontalAlignment="Left"
+            Width="260"
         	TextWrapping="Wrap" 
-        	Foreground="White"
-            Margin="0,0,0,0"
+        	Foreground="White"           
         	VerticalAlignment="Top" 
             FontSize="14.667"
                            
                           />
 
-            </StackPanel>
-            <TextBlock x:Name="Plot" 
+                </StackPanel>
+                <TextBlock x:Name="Plot" 
         	HorizontalAlignment="Left" 
         	Margin="0,15,0,0" 
         	TextWrapping="Wrap" 
@@ -99,36 +100,27 @@
         	VerticalAlignment="Top" 
             FontSize="13.333"/>
 
-            <TextBlock x:Name="Director" 
+                <TextBlock x:Name="Director" 
         	HorizontalAlignment="Left" 
         	Margin="0,15,0,0" 
         	TextWrapping="Wrap" 
         	Foreground="White"
         	VerticalAlignment="Top" 
             FontSize="13.333"/>
-            
+
                 <TextBlock x:Name="Cast" 
         	HorizontalAlignment="Left" 
         	Margin="0,10,0,0" 
         	TextWrapping="Wrap" 
         	Foreground="White"
         	VerticalAlignment="Top" 
-            FontSize="13.333"
-          
+            FontSize="13.333"         
                            />
-                
 
-                    <TextBlock x:Name="TextBlock" 
-        	HorizontalAlignment="Left" 
-        	Margin="0,5,0,0" 
-        	TextWrapping="Wrap" 
-        	Foreground="White"
-        	VerticalAlignment="Top" 
-            FontSize="13.333"/>
 
-        </StackPanel>
+            </StackPanel>
         </ScrollViewer>
 
     </Grid>
-       
+
 </Page>

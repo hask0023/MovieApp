@@ -122,6 +122,7 @@
     <Content Include="Assets\back_icon.png" />
     <Content Include="Assets\details_poster.jpg" />
     <Content Include="Assets\main_bg.png" />
+    <Content Include="Assets\not-found.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />

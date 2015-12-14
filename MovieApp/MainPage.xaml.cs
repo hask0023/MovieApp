@@ -36,27 +36,20 @@ namespace MovieApp
             this.InitializeComponent();
 
             mainPageMovieInfo = new MovieInfo();          
-            Details_Icon.Background = new SolidColorBrush();
             Search_Icon.Background = new SolidColorBrush(Colors.Gray);
             About_Icon.Background = new SolidColorBrush();
 
         }
 
-        private void Go_Button_Click(object sender, RoutedEventArgs e)
-        {
 
-            //if (SearchBox.Text.Length >= 1)
-            //{
-            //    Frame.Navigate(typeof(DetailsPage), SearchBox.Text);
-            //}
-
-        }
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
         {
             SearchBox.Text = string.Empty;
            
         }
+
+       
         #region navigation & saving state
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
@@ -106,24 +99,13 @@ namespace MovieApp
         }
       
 
-        private void Search_Click(object sender, RoutedEventArgs e)
-        {
-            //Frame.Navigate(typeof(MainPage));
-            
-        }
-
-        private void Details_Click(object sender, RoutedEventArgs e)
-        {
-           // Frame.Navigate(typeof(DetailsPage));
-        }
-
         private void About_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(About));
         }
         #endregion
 
-        // method for getting autosuggest source
+        // method for getting autosuggestbox items source
         private async void SearchBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
             if (SearchBox.Text.Length >= 1)
@@ -141,5 +123,7 @@ namespace MovieApp
 
             Frame.Navigate(typeof(DetailsPage), selectedMovie);
         }
+
+       
     }
 }

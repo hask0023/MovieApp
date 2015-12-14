@@ -66,7 +66,7 @@ namespace MovieApp
             using (var client = new ServiceClient("7ebbe16045b752de5a97201e94696914"))
             {
                 var movies = await client.Movies.SearchAsync(searchQuery, null, true, null, 1, CancellationToken.None);
-               
+
 
                 foreach (Movie m in movies.Results)
                 {
@@ -79,12 +79,12 @@ namespace MovieApp
 
                     if (m.Title.Equals(searchQuery))
                     {
-                        //http calls to get detailed movie info and pictures
+                        //http calls to get specific movie info and pictures
                         var movie = await client.Movies.GetAsync(m.Id, null, true, CancellationToken.None);
                         var images = await client.Movies.GetImagesAsync(m.Id, null, CancellationToken.None);
                         byte counter = 0;
 
-                        
+
                         // get all genres for movie
                         foreach (System.Net.TMDb.Genre theGenres in movie.Genres)
                         {
@@ -116,7 +116,7 @@ namespace MovieApp
                             break;
                         }
 
-                        // formatting results to be ready to be sent back
+                        // formatting results to be ready to get sent back
                         fullCast = fullCast.Remove(fullCast.Length - 2);
                         allGenres = allGenres.Remove(allGenres.Length - 2);
                         runtime = movie.Runtime.ToString() + " min";
@@ -135,7 +135,7 @@ namespace MovieApp
                         }
                         movieCounter++;
                     }
-                    
+
                 }
             }
         }

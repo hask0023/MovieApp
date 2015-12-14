@@ -28,8 +28,6 @@ namespace MovieApp
         public About()
         {
             this.InitializeComponent();
-
-            Details_Icon.Background = new SolidColorBrush();
             Search_Icon.Background = new SolidColorBrush();
             About_Icon.Background = new SolidColorBrush(Colors.Gray);
         }
@@ -38,15 +36,17 @@ namespace MovieApp
         {
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-           currentView.BackRequested += backButton_Tapped;
+            currentView.BackRequested += backButton_Tapped;
 
 
             base.OnNavigatedTo(e);
         }
 
-        private void backButton_Tapped(object sender, BackRequestedEventArgs e) {
+        private void backButton_Tapped(object sender, BackRequestedEventArgs e)
+        {
             //issue with the hardware back button and go back function
-            if (Frame.CanGoBack) {
+            if (Frame.CanGoBack)
+            {
                 Frame.GoBack();
                 e.Handled = true;
             }
@@ -60,11 +60,6 @@ namespace MovieApp
             Frame.Navigate(typeof(MainPage));
         }
 
-        private void Details_Click(object sender, RoutedEventArgs e)
-        {
-          //  Frame.Navigate(typeof(DetailsPage));
-
-        }
 
         private void About_Click(object sender, RoutedEventArgs e)
         {

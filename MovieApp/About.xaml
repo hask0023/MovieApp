@@ -16,11 +16,7 @@
                           Click="Search_Click"
                           Foreground="White"
                           Name="Search_Icon"/>
-            <AppBarButton Icon="AllApps" 
-                          Label="appbarbutton" 
-                          Foreground="White"
-                          Click="Details_Click"
-                          Name="Details_Icon"/>
+            
             <AppBarButton Icon="Contact" 
                           Label="appbarbutton" 
                           Foreground="White"

@@ -54,10 +54,23 @@ namespace MovieApp
 
                 //call MovieInfo class to get info to populate details of selected movie
                 await detailsPageMovieInfo.searchSpecificMovie(movieToSearch);
+
+                // some obscure movies don't have image files. Sets the source to the default 'not found' image if it can't find any.
+                if (detailsPageMovieInfo.posterBitMap == null)
+                {
+                    string notFoundUrl = "ms-appx:///Assets/not-found.png";
+                    BitmapImage notFound = new BitmapImage(new Uri(notFoundUrl, UriKind.RelativeOrAbsolute));
+                    Poster.Source = notFound;
+                }
+                else
+                {
+                    Poster.Source = detailsPageMovieInfo.posterBitMap;
+                }
+
+                // sets the rest of the information needed
                 Plot.Text = detailsPageMovieInfo.plot;
                 Director.Text = detailsPageMovieInfo.movieDirector;
                 Cast.Text = detailsPageMovieInfo.fullCast;
-                Poster.Source = detailsPageMovieInfo.posterBitMap;
                 Genre.Text = detailsPageMovieInfo.allGenres;
                 RunTime.Text = detailsPageMovieInfo.runtime;
                 Movie_Title.Text = detailsPageMovieInfo.title;
@@ -83,10 +96,6 @@ namespace MovieApp
             Frame.Navigate(typeof(MainPage));
         }
 
-        private void Details_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(DetailsPage));
-        }
 
         private void About_Click(object sender, RoutedEventArgs e)
         {
